@@ -221,4 +221,15 @@ function getIntersection(segment1, segment2) {
 	};
 }
 minator == 0) {
-		retu
+			return null;
+	}
+	var ua = (dx2 * cy - dy2 * cx) / denominator;
+	var ub = (dx1 * cy - dy1 * cx) / denominator;
+	return {
+		x: segment1.x1 + ua * dx1,
+		y: segment1.y1 + ua * dy1,
+		segment1: ua >= 0 && ua <= 1,
+		segment2: ub >= 0 && ub <= 1
+	};
+}
+	
